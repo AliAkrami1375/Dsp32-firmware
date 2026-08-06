@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<base href="./">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#060a12">
+<title>Dsp32</title>
+<meta name="description" content="Dsp32 — a Windows-style desktop that runs on an ESP32 and is served over its own Wi-Fi hotspot. This is the simulator: the desktop is real, the device is imitated in your browser.">
+<link rel="icon" href="assets/hero.svg">
+<link rel="stylesheet" href="css/desktop.css">
+</head>
+<body>
+
+<div id="boot">
+  <div class="boot-stage">
+    <div class="boot-rings">
+      <span class="br br1"></span><span class="br br2"></span><span class="br br3"></span>
+      <span class="boot-sweep"></span>
+    </div>
+    <div class="boot-orbit" id="boot-orbit"></div>
+    <div class="boot-hero">
+      <div class="boot-glow"></div>
+      <img src="assets/hero.svg" alt="Dsp32">
+    </div>
+  </div>
+  <div class="boot-name">DSP32</div>
+  <div class="boot-caption" id="boot-caption">Initialising</div>
+  <div class="boot-bar"><i id="boot-bar-fill"></i></div>
+</div>
+
+<div id="desktop" hidden></div>
+
+<script src="sim.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/platform.js"></script>
+<script src="js/wm.js"></script>
+<script src="js/services.js"></script>
+<script src="js/session.js"></script>
+<script src="js/setup.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/dib.js"></script>
+<script src="js/account.js"></script>
+<script src="js/appapi.js"></script>
+<script src="js/apps/explorer.js"></script>
+<script src="js/apps/notepad.js"></script>
+<script src="js/apps/viewer.js"></script>
+<script src="js/apps/camera.js"></script>
+<script src="js/apps/monitor.js"></script>
+<script src="js/apps/terminal.js"></script>
+<script src="js/apps/serial.js"></script>
+<script src="js/apps/thispc.js"></script>
+<script src="js/apps/calculator.js"></script>
+<script src="js/apps/firewall.js"></script>
+<script src="js/apps/appstore.js"></script>
+<script src="js/apps/settings.js"></script>
+<script src="js/apps/about.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

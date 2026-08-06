@@ -5,6 +5,12 @@
 Prebuilt firmware for the ESP32 family, the Di8266 node image, and every
 installable app.
 
+### ▸ [Try it in your browser](demo/)
+
+The desktop is the real one. The device behind it is imitated in the page, so
+there is nothing to flash and nothing to install — files and settings are kept
+in your browser and survive a reload.
+
 <p align="center">
   <img src="docs/img/02-desktop.png" width="820" alt="The Dsp32 desktop">
 </p>
