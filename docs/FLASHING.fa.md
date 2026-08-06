@@ -4,13 +4,13 @@
 
 هر چیزی که برای نصب Dsp32 روی برد لازم دارید، با هر ابزاری که ترجیح می‌دهید.
 
-[English](FLASHING.md) · [فارسی](FLASHING.fa.md)
+[English](FLASHING.md)
 
 ---
 
 ## کدام فایل را لازم دارم؟
 
-به پوشه‌ی [`firmware/<برد شما>/`](../firmware/) بروید — هر پوشه دو نوع ایمیج دارد:
+هر ریلیز برای هر واریانت دو نوع ایمیج دارد:
 
 | فایل | چه وقت استفاده کنید |
 |---|---|
@@ -19,17 +19,15 @@
 
 واریانت متناسب با برد خود را انتخاب کنید:
 
-| برد شما | پوشه |
+| برد شما | واریانتی که باید دانلود کنید |
 |---|---|
-| ESP32 DevKit / WROOM / WROVER معمولی | [`firmware/esp32`](../firmware/esp32/) |
-| AI-Thinker ESP32-CAM | [`firmware/esp32cam`](../firmware/esp32cam/) |
-| بردهای ESP32-S2 | [`firmware/esp32s2`](../firmware/esp32s2/) |
-| ESP32-S3 DevKit معمولی | [`firmware/esp32s3`](../firmware/esp32s3/) |
-| Seeed XIAO ESP32S3 Sense | [`firmware/xiao_s3_sense`](../firmware/xiao_s3_sense/) |
-| بردهای ESP32-C3 | [`firmware/esp32c3`](../firmware/esp32c3/) |
-| بردهای ESP32-C6 | [`firmware/esp32c6`](../firmware/esp32c6/) |
-
-صحت دانلود را با [`SHA256SUMS.txt`](../SHA256SUMS.txt) بررسی کنید.
+| ESP32 DevKit / WROOM / WROVER معمولی | `esp32` |
+| AI-Thinker ESP32-CAM | `esp32cam` |
+| بردهای ESP32-S2 | `esp32s2` |
+| ESP32-S3 DevKit معمولی | `esp32s3` |
+| Seeed XIAO ESP32S3 Sense | `xiao_s3_sense` |
+| بردهای ESP32-C3 | `esp32c3` |
+| بردهای ESP32-C6 | `esp32c6` |
 
 ---
 
@@ -247,9 +245,7 @@ merged را روی `0x0` فلش کنید.
 
 **دسکتاپ بالا می‌آید ولی کارت SD نشان داده نمی‌شود**
 ایمیج‌های عمومی آماده روی همه‌ی بردها SD را فعال نمی‌کنند چون سیم‌کشی فرق
-می‌کند. اگر یکی از آن بردها را دارید از ایمیج `esp32cam` یا `xiao_s3_sense`
-استفاده کنید، یا با پین‌های خودتان از
-[سورس](https://github.com/AliAkrami1375/Dsp32) بیلد بگیرید:
+می‌کند. با پین‌های خودتان از سورس بیلد بگیرید:
 `idf.py menuconfig` ← **Dsp32 Configuration** ← **SD card interface**.
 
 **رمز هات‌اسپاتی که گذاشته بودم را فراموش کرده‌ام**

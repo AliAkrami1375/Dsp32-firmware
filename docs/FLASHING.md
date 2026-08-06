@@ -2,14 +2,13 @@
 
 Everything you need to get Dsp32 onto a board, whichever tool you prefer.
 
-[English](FLASHING.md) · [فارسی](FLASHING.fa.md)
+[فارسی](FLASHING.fa.md)
 
 ---
 
 ## Which file do I need?
 
-Browse to [`firmware/<your-board>/`](../firmware/) — each folder has two kinds
-of image:
+Every release ships two kinds of image per variant:
 
 | File | Use it when |
 |---|---|
@@ -18,17 +17,15 @@ of image:
 
 Pick the variant that matches your board:
 
-| Your board | Folder |
+| Your board | Variant to download |
 |---|---|
-| Generic ESP32 DevKit / WROOM / WROVER | [`firmware/esp32`](../firmware/esp32/) |
-| AI-Thinker ESP32-CAM | [`firmware/esp32cam`](../firmware/esp32cam/) |
-| ESP32-S2 boards | [`firmware/esp32s2`](../firmware/esp32s2/) |
-| Generic ESP32-S3 DevKit | [`firmware/esp32s3`](../firmware/esp32s3/) |
-| Seeed XIAO ESP32S3 Sense | [`firmware/xiao_s3_sense`](../firmware/xiao_s3_sense/) |
-| ESP32-C3 boards | [`firmware/esp32c3`](../firmware/esp32c3/) |
-| ESP32-C6 boards | [`firmware/esp32c6`](../firmware/esp32c6/) |
-
-Verify what you downloaded against [`SHA256SUMS.txt`](../SHA256SUMS.txt).
+| Generic ESP32 DevKit / WROOM / WROVER | `esp32` |
+| AI-Thinker ESP32-CAM | `esp32cam` |
+| ESP32-S2 boards | `esp32s2` |
+| Generic ESP32-S3 DevKit | `esp32s3` |
+| Seeed XIAO ESP32S3 Sense | `xiao_s3_sense` |
+| ESP32-C3 boards | `esp32c3` |
+| ESP32-C6 boards | `esp32c6` |
 
 ---
 
@@ -243,10 +240,8 @@ supply or a powered USB hub, not a laptop port through a long cable.
 
 **The desktop loads but no SD card shows up**
 The prebuilt generic images do not enable SD on every board because the wiring
-differs. Use the `esp32cam` or `xiao_s3_sense` image if you have one of those
-boards, or build from source with your own pins
-([source repo](https://github.com/AliAkrami1375/Dsp32) →
-`idf.py menuconfig` → **Dsp32 Configuration** → **SD card interface**).
+differs. Build from source with your own pins:
+`idf.py menuconfig` → **Dsp32 Configuration** → **SD card interface**.
 
 **I forgot the hotspot password I set**
 `esptool.py -p <port> erase_flash` then reflash — this clears NVS and restores
