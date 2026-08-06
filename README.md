@@ -1,4 +1,4 @@
-# Dsp32 — release 1.1.1
+# Dsp32 — release 1.1.2
 
 *[فارسی](README.fa.md)*
 

@@ -1,4 +1,29 @@
-# Dsp32 v1.1.1
+# Dsp32 v1.1.2
+
+**v1.1.1 booted but served nothing.** The hotspot came up, port 80 answered,
+and every page returned `Nothing matches the given URI`. This release fixes
+that. Flash it over the top; nothing is lost.
+
+## What went wrong
+
+There were 66 HTTP routes and a hand-written cap of 64. `esp_http_server`
+refuses every registration past `max_uri_handlers` and does it silently, so
+the last two never installed — one of them `ROUTE("/*", h_root)`, the
+catch-all that serves the desktop and every embedded asset.
+
+The cap is now taken from the table itself, so the two cannot disagree, and
+the registration loop checks its return value and logs anything it failed to
+install. I had already raised this number once, from 48 to 64, then added
+sixteen routes and went straight past it again — which is why the fix is one
+that cannot drift rather than a bigger number.
+
+QEMU cannot catch this. It has no RF PHY, panics during Wi-Fi init, and never
+reaches the HTTP server. So `tools/boot_test.sh` gained static checks for the
+two things that broke: that the cap is not a literal, and that the wildcard is
+still the last route, since anything registered after it would never be
+reached.
+
+---
 
 **v1.1.0 would not boot.** If you flashed it, the board never raised its
 hotspot — there was no desktop and no way in except reflashing. This release
