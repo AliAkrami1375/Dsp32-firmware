@@ -1,4 +1,59 @@
-# Dsp32 v1.1.0
+# Dsp32 v1.1.1
+
+**v1.1.0 would not boot.** If you flashed it, the board never raised its
+hotspot — there was no desktop and no way in except reflashing. This release
+fixes that. Flash it over the top; nothing is lost.
+
+## What went wrong
+
+Everything added since v1.0.0 — battery monitoring, Dmesh, the ESP8266
+flasher, the media server — was started *before* the Wi-Fi stack. The Dmesh
+task opens a UDP socket as its first act, and `esp_netif_init()` is what
+brings LWIP up. A socket against an uninitialised TCP/IP stack dereferences an
+empty memory pool and panics, so the board rebooted before it ever reached the
+radio.
+
+The order is now: storage and pins, then the network, then everything else.
+That is not just two lines moved. The hotspot is the only way back into a
+board that has gone wrong, so it comes up before anything that might
+misbehave, and each service reports its own trouble through a UI that is
+already running. Every stage logs before it runs, so a board that does stop
+somewhere says where on the serial console.
+
+Three more faults found while looking:
+
+- The Dmesh task waits for a network interface before opening a socket. The
+  new order makes that true today, but the task outlives any particular boot
+  order and the failure mode is a crash, not an error.
+- A failed camera probe left the LEDC timer and the SCCB bus claimed, so every
+  later wiring in the table failed for the wrong reason.
+- The camera probe now skips any wiring whose pins a mounted SD card is using.
+  Several camera boards share pins with the SD reader on the very boards they
+  run on — the AI-Thinker's SDMMC pins are the TTGO's data bus — and taking
+  one out from under a mounted card loses the filesystem.
+
+`DSP32_VERSION` also still said 1.0.0, so the banner and the About window
+reported a version the board was not.
+
+## Why it shipped
+
+It compiled, it linked, every size check passed, and I published it. None of
+that is evidence that a board boots.
+
+There is now `tools/boot_test.sh`: it builds each variant, boots the ones QEMU
+can run, and checks `app_main` gets all the way to the radio. QEMU has no RF
+PHY, so a panic there is the finish line rather than a failure — confirmed by
+booting the v1.0.0 image, which is known good on hardware and panics in
+exactly the same place.
+
+For this release, **ESP32 and ESP32-CAM were booted**, not just built. The
+other five share every line of that startup path, so a fault in it shows up in
+those two; QEMU has no machine for S2, S3, C3 or C6, and I would rather say so
+than imply a test I did not run.
+
+---
+
+# What v1.1.0 added
 
 A board that manages other boards, serves media off its card, knows when its
 battery is low, and asks who you are before it opens.

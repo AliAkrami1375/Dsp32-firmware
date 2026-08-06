@@ -1,10 +1,57 @@
-# ‏Dsp32 — انتشار 1.1.0
+# ‏Dsp32 — انتشار 1.1.1
 
 *[English](README.md)*
 
 <div dir="rtl">
 
 فرمویر آماده برای خانواده‌ی ESP32، ایمیج نود Di8266، و همه‌ی اپ‌های نصب‌شدنی.
+
+</div>
+
+<p align="center">
+  <img src="docs/img/02-desktop.png" width="820" alt="The Dsp32 desktop">
+</p>
+
+<table>
+<tr>
+<td width="50%"><img src="docs/img/01-boot.png" alt="Boot"><br>
+  <sub><b>Boot</b> — the firmware probes and reports every peripheral it finds</sub></td>
+<td width="50%"><img src="docs/img/03-start-menu.png" alt="Start menu"><br>
+  <sub><b>Start menu</b> — searchable, with everything installed</sub></td>
+</tr>
+<tr>
+<td><img src="docs/img/04-explorer.png" alt="File Explorer"><br>
+  <sub><b>File Explorer</b> — flash and SD, upload by drag-and-drop</sub></td>
+<td><img src="docs/img/05-task-manager.png" alt="Task Manager"><br>
+  <sub><b>Task Manager</b> — live heap chart, temperature, storage</sub></td>
+</tr>
+<tr>
+<td><img src="docs/img/06-terminal.png" alt="Terminal"><br>
+  <sub><b>Terminal</b> — the device REST API from a command line</sub></td>
+<td><img src="docs/img/07-settings-network.png" alt="Network settings"><br>
+  <sub><b>Network</b> — hotspot credentials, scan and join an uplink</sub></td>
+</tr>
+<tr>
+<td><img src="docs/img/08-camera.png" alt="Camera"><br>
+  <sub><b>Camera</b> — live view and capture, on boards that have one</sub></td>
+<td><img src="docs/img/11-app-store.png" alt="App Store"><br>
+  <sub><b>App Store</b> — install from the registry, an SD card or a file</sub></td>
+</tr>
+<tr>
+<td><img src="docs/img/09-snap.png" alt="Snapped windows"><br>
+  <sub><b>Window snapping</b> — drag to an edge or press <code>Win</code>+<code>←</code>/<code>→</code></sub></td>
+<td><img src="docs/img/10-light-theme.png" alt="Light theme"><br>
+  <sub><b>Light theme</b> — eight accents, five wallpapers</sub></td>
+</tr>
+</table>
+
+<p align="center">
+  <img src="docs/img/12-mobile.png" width="260" alt="Mobile view"><br>
+  <sub>A phone is the most likely thing connected to an ESP32 hotspot, so it is
+  built for one.</sub>
+</p>
+
+<div dir="rtl">
 
 **اینجا سورسی نیست.** این مخزن فقط چیزهایی را دارد که یک برد برای اجرا لازم
 دارد: ایمیج برای فلش، بسته برای نصب، و مستندات. عمومی است چون برد رجیستری
@@ -44,7 +91,7 @@ esptool.py --chip auto -p /dev/ttyUSB0 -b 460800 write_flash 0x0 \
 | **ESP32-C3** | `firmware/esp32c3/` | 1.4 MB |
 | **ESP32-C6** | `firmware/esp32c6/` | 1.4 MB |
 | **AI-Thinker ESP32-CAM** | `firmware/esp32cam/` | 1.4 MB |
-| **ESP32-S2** | `firmware/esp32s2/` | 1.3 MB |
+| **ESP32-S2** | `firmware/esp32s2/` | 1.4 MB |
 | **ESP32-S3** | `firmware/esp32s3/` | 1.4 MB |
 | **Seeed XIAO ESP32S3 Sense** | `firmware/xiao_s3_sense/` | 1.4 MB |
 
