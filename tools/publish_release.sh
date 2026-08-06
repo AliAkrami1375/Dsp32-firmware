@@ -14,7 +14,7 @@ TAG="${1:-v1.0.0}"
 REPO="${DSP32_REPO:-AliAkrami1375/Dsp32-firmware}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-NOTES="$ROOT/docs/RELEASE_NOTES_${TAG#v}.md"
+NOTES="$ROOT/docs/RELEASE_NOTES_${TAG}.md"
 
 : "${GITHUB_TOKEN:?set GITHUB_TOKEN to a token with Contents: write on $REPO}"
 
@@ -55,13 +55,28 @@ else
   rel=$(api -X POST -d "$payload" "https://api.github.com/repos/$REPO/releases")
 fi
 
-read -r rel_id upload_url html_url <<<"$(python3 -c '
+# A command substitution feeding `read` cannot trip set -e on its own, so the
+# exit status is captured explicitly — otherwise an API error here would fall
+# through and every upload below would fail against an empty URL.
+if ! parsed=$(python3 -c '
 import sys, json
-r = json.load(sys.stdin)
+try:
+    r = json.load(sys.stdin)
+except ValueError:
+    sys.exit("GitHub returned a non-JSON response")
 if "id" not in r:
-    sys.exit("GitHub API error: " + json.dumps(r)[:400])
+    msg = r.get("message", json.dumps(r)[:300])
+    hint = ""
+    if "not accessible by personal access token" in msg:
+        hint = ("\n  The token is missing the \"Contents\" permission.\n"
+                "  Fine-grained tokens need Repository permissions -> "
+                "Contents: Read and write.")
+    sys.exit(f"GitHub API error: {msg}{hint}")
 print(r["id"], r["upload_url"].split("{")[0], r["html_url"])
-' <<<"$rel")"
+' <<<"$rel"); then
+  exit 1
+fi
+read -r rel_id upload_url html_url <<<"$parsed"
 
 # ---- upload every asset ---------------------------------------------------
 existing_assets=$(api "https://api.github.com/repos/$REPO/releases/$rel_id/assets")
