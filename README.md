@@ -133,10 +133,10 @@ An ESP8266 client that Dsp32 discovers, claims and drives — its own key, its o
 | | |
 |---|---|
 | **Image** | `node/di8266.bin` |
-| **Version** | 2.0 |
+| **Version** | 2.1 |
 | **Protocol** | Dmesh v2 |
-| **Size** | 319,088 bytes |
-| **SHA-256** | `3e84d1033aefe761781c071db4766a1418efe7916eedb8a70bc5ee7cda1a89d2` |
+| **Size** | 320,512 bytes |
+| **SHA-256** | `1976ab084d9b8647513ca499d5c8c72399e8226d803df7d8da84301e040a5b64` |
 
 A blank ESP8266 can be flashed straight from the **Dmesh** app over four
 wires — no computer needed. Everything after that is over the air. See

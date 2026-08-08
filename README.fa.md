@@ -161,9 +161,9 @@ App Store روی برد فایل `apps/registry.json` همین مخزن را م�
 | | |
 |---|---|
 | **Image** | `node/di8266.bin` |
-| **Version** | 2.0 |
+| **Version** | 2.1 |
 | **Protocol** | Dmesh v2 |
-| **SHA-256** | `3e84d1033aefe761781c071db4766a14…` |
+| **SHA-256** | `1976ab084d9b8647513ca499d5c8c723…` |
 
 </div>
 

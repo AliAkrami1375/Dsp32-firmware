@@ -1,9 +1,9 @@
 {
   "name": "Di8266",
-  "version": "2.0",
+  "version": "2.1",
   "protocol": 2,
   "file": "di8266.bin",
-  "size": 319088,
-  "sha256": "3e84d1033aefe761781c071db4766a1418efe7916eedb8a70bc5ee7cda1a89d2",
+  "size": 320512,
+  "sha256": "1976ab084d9b8647513ca499d5c8c72399e8226d803df7d8da84301e040a5b64",
   "notes": "Dmesh v2 client: per-node AES-128-CTR + HMAC-SHA256, heartbeats with state hashes, rules that run on the node."
 }
