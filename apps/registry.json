@@ -9,7 +9,7 @@
       "description": "Clock, stopwatch, countdown timer and alarms. Alarms can pulse a GPIO pin, so the board can drive a buzzer or relay when one fires.",
       "size": 5678,
       "url": "clock/clock.dib",
-      "sha256": "679a425fdb01277b5bdae0663e91cf730ec5cf41368bf6c8b0e5ecf11e6f696e"
+      "sha256": "58062f139d287cbf6bd86f5fd7851a728e4c30a1a892ab38beb6031c9cc239cc"
     },
     {
       "id": "ir.dibachain.code",
@@ -19,7 +19,7 @@
       "description": "A code editor for the device: file tree, tabs, syntax highlighting, line numbers, find and replace, auto-indent and bracket matching. Writes straight to flash or the SD card, so you can develop Dsp32 apps on the board itself.",
       "size": 9410,
       "url": "code/code.dib",
-      "sha256": "e7b2614ba028d4153a10f24787bd83aa7172a7b1d0eb3825f064f5e826b1b104"
+      "sha256": "87c42f1c74e88b7e7253808b358574e8fc68c3614eb744ffd217532f87c06b5c"
     },
     {
       "id": "ir.dibachain.manager",
@@ -29,17 +29,17 @@
       "description": "Visual pin manager and flow editor. Wire GPIO, ADC, PWM, HTTP requests, conditions, loops and timers into rules by dragging nodes onto a canvas. Deploy a flow and it keeps running in the background with the window closed, publishing live readings to the desktop.",
       "size": 22512,
       "url": "diba-manager/diba-manager.dib",
-      "sha256": "0bf214b3bcb7b217d356655f8babfb8032dd400dbc047de5716f894bd2f453ce"
+      "sha256": "357a3b7e6ac9a10e0f5f7394534623b3730bcb03a1853ccc7d6d31a906a8dd5f"
     },
     {
       "id": "ir.dibachain.dmesh",
       "name": "Dmesh",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "author": "Dibachain",
       "description": "Central control for Di8266 nodes. Nodes are registered on the board itself, each with its own key, so the network keeps running with this app closed. Configure a node whether or not it is switched on and it is brought into line when it next reports in; give it rules it runs by itself; flash it over the air; release and wipe it when it changes hands.",
-      "size": 13152,
+      "size": 13317,
       "url": "dmesh/dmesh.dib",
-      "sha256": "d07a3a65553b3242e152eba6a4f321f5488de54e03892748ea6b3b3b9f4eed6f"
+      "sha256": "7e7b059c588316b2cd254d65011e4a0dff798ff3e8c58da4b74227af21afba9d"
     },
     {
       "id": "ir.dibachain.media",
@@ -49,7 +49,7 @@
       "description": "Serves a folder on the SD card as a web library on its own port, with playback, file management and an optional password. It is a service, not a page: once started it belongs to the board, survives this app being closed and comes back after a reboot. Needs an SD card — the internal flash is neither big enough nor meant to be written to this hard.",
       "size": 6277,
       "url": "media-server/media-server.dib",
-      "sha256": "ae204e3bb0ac2ebb97da3f7631a5206ef1ed1367f183757fafbb1cd7765bbae6"
+      "sha256": "e14e51c3076ef1c205c5ce4963eac3c90ec45930fd4de0bd8ca61980e342c0a8"
     },
     {
       "id": "ir.dsp32.notes",
@@ -59,7 +59,7 @@
       "description": "Quick notes kept on the device. Demonstrates storage, filesystem access and notifications from a packaged app.",
       "size": 2899,
       "url": "notes/notes.dib",
-      "sha256": "54b4d4f906ad527f97572d6806bac8d3906f12f2644044bcf819455658494d38"
+      "sha256": "9cac9d5e96f7b6a4389f7d99bd17e38f86f908b77005ba953405997ac00408fd"
     },
     {
       "id": "ir.dibachain.snake",
@@ -69,7 +69,7 @@
       "description": "The classic game. Arrow keys, WASD, swipe on a touch screen, or wire a joystick to the board's GPIO pins and play with hardware.",
       "size": 6171,
       "url": "snake/snake.dib",
-      "sha256": "871f9869d785a2d9d52cd495bc35d78646312dba9c130375651ebccf32b307b5"
+      "sha256": "442b64f68fd6add9d535e7fd32118799072598b7a4a0c4dd5190c14f07cfba91"
     },
     {
       "id": "ir.dibachain.soroush",
@@ -79,7 +79,7 @@
       "description": "A Soroush Plus messenger for the board. Sign in with a phone number and the code sent to it; the session is written to the SD card when there is one and to the internal flash otherwise, so the board stays signed in across reboots. Talks to a SoroPy bridge, which the device proxies for it.",
       "size": 16551,
       "url": "soroush/soroush.dib",
-      "sha256": "11c8f0b0c981ee849a3fbf48de2d3cbc5c43eb16c60073bc1d1ae5b742659899"
+      "sha256": "6e10769d92e0983b2f43b631715686246f94d1d39ccdeef2111f74680ba10f23"
     }
   ]
 }

@@ -135,7 +135,7 @@ App Store روی برد فایل `apps/registry.json` همین مخزن را م�
 | **Clock** | 1.0.0 |
 | **Code** | 1.0.0 |
 | **Diba Manager** | 2.0.0 |
-| **Dmesh** | 2.1.0 |
+| **Dmesh** | 2.2.0 |
 | **Media Server** | 1.0.0 |
 | **Notes** | 1.0.0 |
 | **Snake** | 1.0.0 |

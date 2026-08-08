@@ -115,7 +115,7 @@ anything published here is installable from the device with no further setup.
 | **Clock** | 1.0.0 | Clock, stopwatch, countdown timer and alarms. |
 | **Code** | 1.0.0 | A code editor for the device: file tree, tabs, syntax highlighting, line numbers, find and replace, auto-indent and… |
 | **Diba Manager** | 2.0.0 | Visual pin manager and flow editor. |
-| **Dmesh** | 2.1.0 | Central control for Di8266 nodes. |
+| **Dmesh** | 2.2.0 | Central control for Di8266 nodes. |
 | **Media Server** | 1.0.0 | Serves a folder on the SD card as a web library on its own port, with playback, file management and an optional password. |
 | **Notes** | 1.0.0 | Quick notes kept on the device. Demonstrates storage, filesystem access and notifications from a packaged app. |
 | **Snake** | 1.0.0 | The classic game. |

@@ -212,18 +212,30 @@ the safe state for whatever is wired to them.
 
 ## Connecting it to Dsp32
 
-Dmesh finds nodes on any network the Dsp32 board can reach. There are two
-sensible arrangements:
+**Nothing.** A node joins the Dsp32 hotspot on its own and announces the
+moment it associates, so it appears in the app within a second or two of being
+powered up. **Scan** exists to hurry that along, not because anything needs it.
 
-**Node joins your board.** Nothing to do — the node's AP and the Dsp32 AP are
-separate networks, so this does not happen by itself. Use the second option.
+This is what makes the node count irrelevant. Every node is a station on the
+board's own hotspot, so they all share one subnet: the controller broadcasts
+once and hears from all of them, and the twentieth node changes nothing about
+the arrangement. A node that instead sat on its own network could never be
+reached by the controller, and there could only ever be one of them — a Dsp32
+board joins exactly one network.
 
-**Board joins the node, or both join one router.** Put the node on the same
-network as the Dsp32 board — either join `Di8266` from **Settings → Network**,
-or change the node's access point later so both sit on a router you control.
-Then press **Scan**.
+The node still raises its own `Di8266` access point alongside. That is the way
+back in, not the way it is used: it is always up, it does not depend on the
+board being switched on, and it is what the OTA bridge talks to.
 
-Discovery is a broadcast, so anything on the same subnet answers.
+**The one case that needs a hand.** A node ships knowing the *default* hotspot
+name and password, because that is all it can know before anyone has spoken to
+it. If you changed either before a node was ever claimed, it has nothing to
+join. Join its `Di8266` network from **Settings → Network** (password
+`123@Test`), claim it once, and the board hands it the real credentials — after
+which it finds its own way home, and you can leave `Di8266` behind.
+
+Claiming always sends the current hotspot credentials, so changing your
+password later and re-claiming is enough to move a node across.
 
 ---
 
